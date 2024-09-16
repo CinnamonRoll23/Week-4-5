@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Registration Form</title>
+    <title>Signup Form</title>
     <style>
-
         body {
             font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-image: url(img/bg.jpg);
-            background-position: center;
+            background-position: center
         }
 
         .container {
             max-width: 450px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 5px;
+            background-color: #fff;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(52, 161, 224, 0.2);
         }
 
@@ -27,7 +27,6 @@
 
         .form-group {
             margin-bottom: 15px;
-            margin-right: 15px;
         }
 
         label {
@@ -37,23 +36,13 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="password"],
-        input[type="date"] {
-            width: 100%;
+        input[type="password"] {
+            width: 420px;
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 5px;
         }
 
         button[type="submit"] {
@@ -68,61 +57,41 @@
         button[type="submit"]:hover {
             background-color: #0056b3;
         }
-
-        .error {
-            color: red;
-            font-size: 12px;
-        }
     </style>
 </head>
 <body>
-
-
-
     <div class="container">
-        <h1>Employee Registration Form</h1>
-        <form action="#" method="post" id="registration-form">
+        <h1>Sign Up</h1>
+        <form action="#" method="post">
             <div class="form-group">
-                <label for="LastName
-                ">Last Name:</label>
-                <input type="text" id="LastName" required>
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="LastName" required>
             </div>
             <div class="form-group">
                 <label for="FirstName">First Name:</label>
-                <input type="text" id="FirstName" required>
+                <input type="text" id="FirstName" name="FirstName" required>
             </div>
             <div class="form-group">
-                <label for="MiddleName">Middle Name:</label>
-                <input type="text" id="MiddleName" required>
+                <label for="MiddleName">Middle Name: (put N/A if none)</label>
+                <input type="text" id="MiddleName" name="MiddleName">
             </div>
             <div class="form-group">
-                <label for="suffix">Suffix (put N/A if none)</label>
-                <input type="text" id="SuffixName">
+                <label for="SuffixName">Suffix: (put N/A if none)</label>
+                <input type="text" id="SuffixName" name="SuffixName">
             </div>
             <div class="form-group">
-                <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" required>
-            </div>
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <select id="department" required>
-                    <option value="" selected>Please select your department</option>
-                    <option value="hr">Human Resource</option>
-                    <option value="finance">Finance</option>
-                    <option value="it">IT</option>
-                    <option value="sales">Sales</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="office">Office:</label>
-                <input type="text" id="office" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}">
-                <small class="error">Password must contain at least 8 characters, including an uppercase letter, a lowercase letter, a digit, and a special character.</small>
+                <input type="password" id="password" name="password"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"
+                       title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character (!@#$%^&*)."
+                       required>
+                <small>Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character (!@#$%^&*).</small>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
 </body>
